@@ -1,4 +1,6 @@
 require('dotenv').config();
+console.log('Puerto configurado:', process.env.PORT);
+console.log("Base de datos:", process.env.DB_NAME);
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql')
@@ -25,7 +27,7 @@ db.connect(err => {
 });
 
 app.listen(process.env.PORT, () => console.log(`Servidor corriendo en el puerto ${process.env.PORT}`));
-/*app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('¡Backend funcionando!');
-});*/
+});
 
